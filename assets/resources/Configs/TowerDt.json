@@ -1,0 +1,29 @@
+[
+    {
+        "id": 2001,
+        "name": "arrow",
+        "interval": 0.5,
+        "ack": 1,
+        "speed": 500,
+        "scope": 400,
+        "money": 200
+    },
+    {
+        "id": 2002,
+        "name": "attack",
+        "interval": 1,
+        "ack": 3,
+        "speed": 500,
+        "scope": 450,
+        "money": 350
+    },
+    {
+        "id": 2003,
+        "name": "direction",
+        "interval": 0.6,
+        "ack": 1,
+        "speed": 600,
+        "scope": 600,
+        "money": 500
+    }
+]

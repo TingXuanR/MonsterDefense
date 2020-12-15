@@ -1,0 +1,65 @@
+[
+    {
+        "id": 3001,
+        "level_id": 4001,
+        "enemy_id": 1001,
+        "enemy_num": 5,
+        "interval": 1
+    },
+    {
+        "id": 3002,
+        "level_id": 4001,
+        "enemy_id": 1002,
+        "enemy_num": 5,
+        "interval": 1
+    },
+    {
+        "id": 3003,
+        "level_id": 4001,
+        "enemy_id": 1003,
+        "enemy_num": 5,
+        "interval": 1
+    },
+    {
+        "id": 3004,
+        "level_id": 4002,
+        "enemy_id": 1001,
+        "enemy_num": 10,
+        "interval": 1
+    },
+    {
+        "id": 3005,
+        "level_id": 4002,
+        "enemy_id": 1002,
+        "enemy_num": 10,
+        "interval": 1
+    },
+    {
+        "id": 3006,
+        "level_id": 4002,
+        "enemy_id": 1003,
+        "enemy_num": 10,
+        "interval": 1
+    },
+    {
+        "id": 3007,
+        "level_id": 4003,
+        "enemy_id": 1001,
+        "enemy_num": 15,
+        "interval": 1
+    },
+    {
+        "id": 3008,
+        "level_id": 4003,
+        "enemy_id": 1002,
+        "enemy_num": 15,
+        "interval": 1
+    },
+    {
+        "id": 3009,
+        "level_id": 4003,
+        "enemy_id": 1003,
+        "enemy_num": 15,
+        "interval": 1
+    }
+]

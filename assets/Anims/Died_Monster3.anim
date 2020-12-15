@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Died_Monster3",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.85,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "ffa2d741-3c4f-424f-bd1c-b0a1ef07f3cc"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "5ff25702-a7f2-4091-b4b0-730860a84578"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "ce0879c7-1424-483f-b649-199b8aa10471"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "7dd43155-b06a-4e37-9d93-8ddd9b09bbdc"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "63fdabf6-5fff-44ff-8e22-947b54891356"
+            }
+          },
+          {
+            "frame": 0.8333333333333334,
+            "value": {
+              "__uuid__": "2cde4619-3705-4a58-9aef-a166ae809e4c"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

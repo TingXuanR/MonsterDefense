@@ -1,0 +1,21 @@
+[
+    {
+        "image": [
+            "playbg",
+            "card_1",
+            "card_2",
+            "card_3",
+            "selectLevelBg1",
+            "start_1",
+            "start_2",
+            "successfulBg",
+            "btnExit_1",
+            "btnExit_2",
+            "btnReturn_2",
+            "btnReturn_1"
+        ],
+        "plist": [
+            "Play"
+        ]
+    }
+]

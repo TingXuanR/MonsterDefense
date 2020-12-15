@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1001,
+        "ack": 1,
+        "hp": 10,
+        "speed": 200,
+        "name": "bad_guy",
+	"money":50
+    },
+    {
+        "id": 1002,
+        "ack": 1,
+        "hp": 5,
+        "speed": 500,
+        "name": "fast_guy",
+	"money":70
+    },
+    {
+        "id": 1003,
+        "ack": 1,
+        "hp": 25,
+        "speed": 100,
+        "name": "slow_guy",
+	"money":90
+    }
+]
