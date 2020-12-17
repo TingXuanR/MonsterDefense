@@ -5,7 +5,7 @@ export default class ConfigMgr {
 
     static getInstance() {
         if (!ConfigMgr.instance) {
-            return new ConfigMgr();
+            ConfigMgr.instance = new ConfigMgr();
         }
         return ConfigMgr.instance;
     }
@@ -30,7 +30,7 @@ export default class ConfigMgr {
         delete this.mapDt[key];
     }
     // get
-    getConfig(key: string): ConfigDt{
+    getConfig(key: string){
         if (!key || typeof(key) !== 'string') {
             return  null;
         }

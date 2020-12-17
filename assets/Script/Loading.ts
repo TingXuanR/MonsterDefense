@@ -22,6 +22,7 @@ export default class Loading extends cc.Component {
                     let asset = assets[i];
                     if(asset instanceof cc.JsonAsset) {
                         let configDt = new ConfigDt(asset.json);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                         ConfigMgr.getInstance().addConfig(asset.name, configDt);
                     }
                     else if(asset instanceof cc.SpriteFrame) {
@@ -30,8 +31,13 @@ export default class Loading extends cc.Component {
                     else if(asset instanceof cc.Prefab) {
                         ResMgr.getInstance().addData('prefab', asset.name, asset);
                     }
+                    else if (asset instanceof cc.TiledMapAsset) {
+                        ResMgr.getInstance().addData('tileMap', asset.name, asset);
+                    }
                 }
+                cc.director.loadScene('Menu');    
             });
+        
     }
 
     start () {

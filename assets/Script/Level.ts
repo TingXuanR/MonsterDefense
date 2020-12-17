@@ -1,4 +1,6 @@
 import LevelMgr from "./LevelMgr";
+import ConfigMgr from "./ConfigMgr";
+import ResMgr from "./ResMgr";
 
 const {ccclass, property} = cc._decorator;
 
@@ -18,8 +20,21 @@ export default class Level extends cc.Component {
     }
 
     onBtnStart() {
-        let index = this.pageView.getCurrentPageIndex();
-        this.levelMgr.setLevelID(1000+index+1);
+        // First Version
+        // let index = this.pageView.getCurrentPageIndex();
+        // this.levelMgr.setLevelID(1000+index+1);
+        // ConfigMgr.getInstance().addConfig('mapIndex', index);
+        // cc.director.loadScene('Game');
+
+        // second version
+        // let prefabGame = ResMgr.getInstance().getPrefab('Game');
+        // let gameN = cc.instantiate(prefabGame);
+        // gameN.parent = cc.director.getScene();
+
+        //third version
+        let index = this.pageView.getCurrentPageIndex() + 1;
+        ConfigMgr.getInstance().addConfig('mapIndex', index);
+        
         cc.director.loadScene('Game');
     }
 

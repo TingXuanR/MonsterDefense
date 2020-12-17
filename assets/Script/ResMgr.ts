@@ -1,11 +1,11 @@
 
 export default class ResMgr{
     
-    static instance: ResMgr
+    static instance: ResMgr = null;
 
     static getInstance() {
         if (!ResMgr.instance) {
-            return new ResMgr();
+            ResMgr.instance =  new ResMgr();
         }
         return ResMgr.instance;
     }
@@ -41,4 +41,7 @@ export default class ResMgr{
         return this.allCache['prefab'].get(key);
     }
     
+    getTileMap(key) {
+        return this.allCache['tileMap'].get(key);
+    }
 }
