@@ -17,15 +17,15 @@
         "id": 3003,
         "level_id": 4001,
         "enemy_id": 1003,
-        "enemy_num": 5,
-        "interval": 1
+        "enemy_num": 4,
+        "interval": 2
     },
     {
         "id": 3004,
         "level_id": 4002,
         "enemy_id": 1001,
         "enemy_num": 10,
-        "interval": 1
+        "interval": 2
     },
     {
         "id": 3005,

@@ -1,4 +1,4 @@
-import ResMgr from "./ResMgr";
+import ResMgr from "./Manager/ResMgr";
 
 const {ccclass, property} = cc._decorator;
 

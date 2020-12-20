@@ -20,7 +20,7 @@ class btnStart extends cc.Component {
     }
 
     onBtnStart() {
-        cc.director.loadScene();
+        cc.director.loadScene('Game');
     }
     // update (dt) {}
 }

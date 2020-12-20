@@ -1,6 +1,7 @@
-import LevelMgr from "./LevelMgr";
-import ConfigMgr from "./ConfigMgr";
-import ResMgr from "./ResMgr";
+import LevelMgr from "../Manager/LevelMgr";
+import ConfigMgr from "../Manager/ConfigMgr";
+import ResMgr from "../Manager/ResMgr";
+import ModuleBase from "../Module/ModuleBase";
 
 const {ccclass, property} = cc._decorator;
 
@@ -8,9 +9,9 @@ const {ccclass, property} = cc._decorator;
 export default class Level extends cc.Component {
 
     @property(cc.PageView)
-    pageView: cc.PageView;
+    pageView: cc.PageView=null;
     @property(cc.Node)
-    btnStart: cc.Node;
+    btnStart: cc.Node=null;
 
     levelMgr = new LevelMgr();
 
@@ -33,8 +34,7 @@ export default class Level extends cc.Component {
 
         //third version
         let index = this.pageView.getCurrentPageIndex() + 1;
-        ConfigMgr.getInstance().addConfig('mapIndex', index);
-        
+        ConfigMgr.getInstance().addConfig('mapIndex', index);    
         cc.director.loadScene('Game');
     }
 

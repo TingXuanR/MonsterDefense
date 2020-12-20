@@ -1,4 +1,3 @@
-import ConfigDt from './ConfigDt'
 
 export default class ConfigMgr {
     static instance: ConfigMgr

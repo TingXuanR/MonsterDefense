@@ -5,24 +5,19 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import ModuleBase from "../Module/ModuleBase";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class TouchMgr extends ModuleBase {
 
-    @property(cc.Label)
-    label: cc.Label = null;
-
-    @property
-    text: string = 'hello';
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {}
-
-    start () {
-
+    onInit() {
+        this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchstart, this);
     }
 
-    // update (dt) {}
+    onTouchstart(event) {
+        let touchPos = event.getLocation();
+        this.sendMsg('CardMgr', 'addCard', touchPos);
+    }
 }

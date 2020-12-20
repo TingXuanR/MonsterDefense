@@ -15,8 +15,8 @@ export default class ModuleBase extends cc.Component {
 
     onRelease () {}
 
-    sendMsg() {
-
+    sendMsg(moduleName, funcName, ...rest) {
+        return ModuleMgr.getInstance().sendMsg.apply(ModuleMgr.getInstance(), arguments);
     }
 
     getModule(key: string) {

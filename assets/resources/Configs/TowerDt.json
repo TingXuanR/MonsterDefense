@@ -1,6 +1,7 @@
 [
     {
         "id": 2001,
+        "bulletId": 1,
         "name": "arrow",
         "interval": 0.5,
         "ack": 1,
@@ -10,6 +11,7 @@
     },
     {
         "id": 2002,
+        "bulletId": 2,
         "name": "attack",
         "interval": 1,
         "ack": 3,
@@ -19,6 +21,7 @@
     },
     {
         "id": 2003,
+        "bulletId": 3,
         "name": "direction",
         "interval": 0.6,
         "ack": 1,

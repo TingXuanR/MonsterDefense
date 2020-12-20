@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="96" tileheight="96" nextobjectid="9">
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="96" tileheight="96" infinite="0" nextobjectid="22">
  <tileset firstgid="1" name="tiles" tilewidth="96" tileheight="96" tilecount="48" columns="8">
   <image source="tiles.png" trans="ff00ff" width="768" height="576"/>
   <tile id="23">
@@ -19,13 +19,13 @@
   </data>
  </layer>
  <objectgroup name="obj">
-  <object id="1" name="0" x="715" y="233"/>
-  <object id="2" name="1" x="720" y="388"/>
-  <object id="3" name="2" x="1008" y="387"/>
-  <object id="4" name="3" x="1010" y="205"/>
-  <object id="5" name="4" x="1202" y="203"/>
-  <object id="6" name="5" x="1199" y="594"/>
-  <object id="7" name="6" x="335" y="586"/>
-  <object id="8" name="7" x="377" y="311"/>
+  <object id="9" name="0" x="708" y="210.667"/>
+  <object id="10" name="1" x="713.333" y="396"/>
+  <object id="11" name="2" x="1013.33" y="396"/>
+  <object id="12" name="3" x="1016" y="204"/>
+  <object id="14" name="4" x="1202.67" y="202.667"/>
+  <object id="15" name="5" x="1205.33" y="586.667"/>
+  <object id="16" name="6" x="336" y="590.667"/>
+  <object id="20" name="7" x="338.667" y="292"/>
  </objectgroup>
 </map>

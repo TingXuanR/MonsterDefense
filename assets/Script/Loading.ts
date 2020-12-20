@@ -1,14 +1,14 @@
 
 const {ccclass, property} = cc._decorator;
 
-import ConfigMgr from './ConfigMgr';
+import ConfigMgr from './Manager/ConfigMgr';
 import ConfigDt from './ConfigDt';
-import ResMgr from './ResMgr';
+import ResMgr from './Manager/ResMgr';
 @ccclass
 export default class Loading extends cc.Component {
 
     @property(cc.ProgressBar)
-    progressBar: cc.ProgressBar;
+    progressBar: cc.ProgressBar=null;
 
     onLoad () {
         cc.resources.loadDir('./', (finishCount: number, totalCount: number, item):void=>{

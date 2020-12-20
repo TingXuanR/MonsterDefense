@@ -71,7 +71,7 @@ export default class ModuleMgr {
         }
         let func = myModule[funcName];
         if(func) {
-            func.apply(myModule, params);
+            return func.apply(myModule, params);
         }
     }
 

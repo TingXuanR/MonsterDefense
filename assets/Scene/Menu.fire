@@ -161,7 +161,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
-      "height": 640
+      "height": 540
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -174,7 +174,7 @@
       "array": [
         0,
         0,
-        554.2562584220408,
+        252.00938808311847,
         0,
         0,
         0,
@@ -1438,6 +1438,7 @@
     "pageView": {
       "__id__": 23
     },
+    "btnStart": null,
     "_id": "1d3BH50LNM6pXfDcrE2iif"
   },
   {
