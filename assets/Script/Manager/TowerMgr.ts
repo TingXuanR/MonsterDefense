@@ -22,9 +22,11 @@ export default class NewClass extends ModuleBase {
         for (const tower of this._towers) {
             let towerTile = tileMapCtrl.getTileByPos(tower.getPosition());
             if(towerTile.x===tile.x && towerTile.y===tile.y) {  // wrong: towerTile === tile/towerTile.equals(tile)
-                return true;
+                return tower;
+                //return true;
             }
         }
-        return false;
+        return null;
+        //return false;
     }
 }

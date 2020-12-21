@@ -7,7 +7,8 @@
             3003
         ],
         "interval": 5,
-        "money": 500
+        "money": 500,
+        "isLocked": 0
     },
     {
         "id": 4002,
@@ -17,7 +18,8 @@
             3006
         ],
         "interval": 5,
-        "money": 600
+        "money": 600,
+        "isLocked": 1
     },
     {
         "id": 4003,
@@ -27,6 +29,7 @@
             3009
         ],
         "interval": 5,
-        "money": 800
+        "money": 800,
+        "isLocked": 1
     }
 ]

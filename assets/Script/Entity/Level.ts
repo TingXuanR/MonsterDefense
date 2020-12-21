@@ -6,37 +6,52 @@ import ModuleBase from "../Module/ModuleBase";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class Level extends cc.Component {
+export default class Level extends ModuleBase {
 
     @property(cc.PageView)
     pageView: cc.PageView=null;
     @property(cc.Node)
     btnStart: cc.Node=null;
 
-    levelMgr = new LevelMgr();
+    private levelMgr;
 
     onLoad () {
+        //cc.game.addPersistRootNode(this.node.parent);  
+       // ModuleMgr.getInstance().registerModule('level', this);
         this.btnStart = cc.find('Canvas/Menu/btnStart'); 
         this.btnStart.on('click', this.onBtnStart, this);
+        this.node.getChildByName('tipMsg').active = false;
+        this.levelMgr = LevelMgr.getInstance();
+        this.levelMgr.init();
     }
-
+    start() {
+        this.setImg();
+    }
+    setImg() { 
+        let levelImg = ResMgr.getInstance().getSpriteFrame('levelUnLocked');
+        let curIndex = this.levelMgr.getUnLockedID();   // 当前已解锁的关卡下标
+        for(let i = curIndex;i <= this.pageView.getPages().length; ++i) {
+            if(!this.levelMgr.getIsLocked(4000+curIndex)) {
+                let levelPage = cc.find('Canvas/Menu/PageView/view/content/page_'+curIndex);
+                levelPage.getComponent(cc.Sprite).spriteFrame = levelImg;
+            }
+        }
+    }
     onBtnStart() {
-        // First Version
-        // let index = this.pageView.getCurrentPageIndex();
-        // this.levelMgr.setLevelID(1000+index+1);
-        // ConfigMgr.getInstance().addConfig('mapIndex', index);
-        // cc.director.loadScene('Game');
-
-        // second version
-        // let prefabGame = ResMgr.getInstance().getPrefab('Game');
-        // let gameN = cc.instantiate(prefabGame);
-        // gameN.parent = cc.director.getScene();
-
-        //third version
-        let index = this.pageView.getCurrentPageIndex() + 1;
-        ConfigMgr.getInstance().addConfig('mapIndex', index);    
-        cc.director.loadScene('Game');
+        let index = this.pageView.getCurrentPageIndex()+1;
+        ConfigMgr.getInstance().addConfig('mapIndex', index);
+        this.checkIfLocked(index);
     }
 
+    checkIfLocked(index:number) {
+        if(!this.levelMgr.getIsLocked(4000+index)) {
+            this.levelMgr.setLevelID(4000+index);
+            cc.director.loadScene('Game');
+        }
+        else {
+            this.node.getChildByName('tipMsg').active = true;
+            this.scheduleOnce(()=>{this.node.getChildByName('tipMsg').active = false;}, 1);
+        }
+    }
     // update (dt) {}
 }

@@ -18,7 +18,7 @@ export default class btnPause extends cc.Component {
     onBtnStart () {
         let pausePage = cc.find('Game/pausePage');
         pausePage.active = true;
-        pausePage.getChildByName('tipMsg').active = false;
+        //pausePage.getChildByName('tipMsg').active = false;
         cc.director.pause();
     }
 

@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import ModuleBase from "../Module/ModuleBase";
+import JudgeVictory from "../JudgeVictory";
 
 const {ccclass, property} = cc._decorator;
 
@@ -51,6 +52,9 @@ export default class topBarMgr extends ModuleBase {
         this._hp -= hp;
         this._imgScale -= 0.1*hp;
         this._imgScale = this._imgScale <= 0 ? 0:this._imgScale;
+        if(this._hp <= 0) {
+            this.sendMsg('JudgePage', 'setState', false);
+        }
         let content = '<color=#00ff00>Hp: </c><color=#0fffff>'+this._hp+'</color><color=#288973>/10</color>';
         this._hpN.getComponent(cc.RichText).string = content;
         this._hpImgN.setScale(this._imgScale, 1);

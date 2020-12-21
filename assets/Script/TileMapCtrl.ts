@@ -1,6 +1,7 @@
 import ConfigMgr from "./Manager/ConfigMgr";
 import ResMgr from "./Manager/ResMgr";
 import ModuleBase from "./Module/ModuleBase";
+import LevelMgr from "./Manager/LevelMgr";
 
 const {ccclass, property} = cc._decorator;
 
@@ -13,7 +14,7 @@ export default class TileMapCtrl extends ModuleBase {
     private _pathMap=new Map();
     onInit() {
         this._tileMap = this.node.getComponent(cc.TiledMap);
-        this._index = ConfigMgr.getInstance().getConfig('mapIndex');
+        this._index = LevelMgr.getInstance().getLevelID() - 4000;
         let tileName:string = 'tilemap'+this._index;
         this._tileMap.tmxAsset = ResMgr.getInstance().getTileMap(tileName);
         let objLayer = this._tileMap.getObjectGroup('obj');

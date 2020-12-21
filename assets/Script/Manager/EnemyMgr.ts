@@ -2,6 +2,7 @@ import ModuleBase from "../Module/ModuleBase";
 import ConfigMgr from "./ConfigMgr";
 import ResMgr from "./ResMgr";
 import TileMapCtrl from "../TileMapCtrl";
+import LevelMgr from "./LevelMgr";
 
 const { ccclass, property } = cc._decorator;
 
@@ -22,7 +23,7 @@ export default class EnemyMgr extends ModuleBase {
     crateWithData() {
         let index = ConfigMgr.getInstance().getConfig('mapIndex');
         let levelID = index + 4000;
-        this._LevelDt = ConfigMgr.getInstance().getConfig('LevelDt').getDataByID(levelID);
+        this._LevelDt = LevelMgr.getInstance().getLevelDt(levelID); 
 
         this._tileMapCtrl = <TileMapCtrl>this.getModule('TileMap');
         this._waves = this._LevelDt['wave_id'];
@@ -49,6 +50,10 @@ export default class EnemyMgr extends ModuleBase {
                         this.schedule(this.addEnemy, this._wave['interval']);
                     }, this._LevelDt['interval']);
                 }
+            } 
+            //如果已经是最后一波了，开启一个定时器，检测是否还有敌人。如果没有敌人了，则胜利。
+            else { 
+                this.schedule(this.sendVictoryMsg, 2);
             }
         }
         else {
@@ -81,5 +86,15 @@ export default class EnemyMgr extends ModuleBase {
             }
         }
         return null;
+    }
+
+    sendVictoryMsg() {
+        let childrenN = this.node.children;
+        if (childrenN.length === 0) {
+            this._waveIndex = 0;
+            this.unschedule(this.sendVictoryMsg);  
+            this.sendMsg('JudgePage', 'setState', true);
+        }
+        
     }
 }

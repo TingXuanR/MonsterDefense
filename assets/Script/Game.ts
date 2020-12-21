@@ -1,4 +1,5 @@
 import ModuleMgr from "./Module/ModuleMgr";
+import LevelMgr from "./Manager/LevelMgr";
 
 const {ccclass, property} = cc._decorator;
 
@@ -28,8 +29,8 @@ export default class Game extends cc.Component {
     }
 
     private _registerModule() {
-        let arrNodeName = ['TileMap', 'Enemy', 'TouchMgr', 'CardMgr', 'TowerMgr', 'topBar', 'bulletMgr'];  // 节点
-        let arrNodeCom = ['TileMapCtrl', 'EnemyMgr', 'TouchMgr', 'CardMgr', 'TowerMgr', 'topBarMgr', 'bulletMgr'];  // 节点拥有的脚本组件
+        let arrNodeName = ['TileMap', 'Enemy', 'TouchMgr', 'CardMgr', 'TowerMgr', 'topBar', 'bulletMgr', 'JudgePage'];  // 节点
+        let arrNodeCom = ['TileMapCtrl', 'EnemyMgr', 'TouchMgr', 'CardMgr', 'TowerMgr', 'topBarMgr', 'bulletMgr', 'JudgeVictory'];  // 节点拥有的脚本组件
         for (let i = 0; i < arrNodeName.length; i++) {
             const node = this.node.getChildByName(arrNodeName[i]);
             const comp = node.getComponent(arrNodeCom[i]);
