@@ -35,7 +35,11 @@ export default class Loading extends cc.Component {
                         ResMgr.getInstance().addData('prefab', asset.name, asset);
                     }
                 }
-                cc.director.loadScene('Menu');    
+                let ani = this.node.getComponent(cc.Animation);
+                ani.on('finished', ()=>{
+                    cc.director.loadScene('Menu');
+                })
+                ani.play('FadeOut');
             });
     }
 

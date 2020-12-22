@@ -59,9 +59,10 @@ export default class CardMgr extends ModuleBase {
                 this._cardN.active = true;
                 this._cardN.x = tilePos.x;
                 this._cardN.y = tilePos.y;
-                
+                let cards = [cc.v2(tile.x-1,tile.y-1), cc.v2(tile.x,tile.y-1), cc.v2(tile.x+1,tile.y-1)]
+                towerMgr.changeOpacity(cards);
             }
-            else if(GID == 24 &&　towerMgr.getTowerByTile(tile)===null){
+            else if(GID != 24 &&　towerMgr.getTowerByTile(tile)===null){
                 this._forbidN.active = true;
                 this._forbidN.x = tilePos.x;
                 this._forbidN.y = tilePos.y;
@@ -80,8 +81,8 @@ export default class CardMgr extends ModuleBase {
                 if(this._money - towerDt['money'] >= 0) {
                     let prefebTower = ResMgr.getInstance().getPrefab('Tower'+flag);
                     let towerN = cc.instantiate(prefebTower);
-                    towerN.parent = this.node;
-                    towerN.setSiblingIndex(0);  // 防止卡牌被塔挡住
+                    towerN.parent = towerMgr.node;
+                    //towerN.setSiblingIndex(0);  // 防止卡牌被塔挡住
                     towerN.x = this._cardN.x;
                     towerN.y = this._cardN.y;
                     towerMgr.addTower(towerN);
@@ -103,6 +104,8 @@ export default class CardMgr extends ModuleBase {
             this._cardN.active = false;
             this._forbidN.active = false;
             this._isShow = false;
+            towerMgr.restoreOpacity();
+
         }
     }
 
@@ -126,9 +129,5 @@ export default class CardMgr extends ModuleBase {
             return true;
         }
         return false;
-    }
-    // 不能在塔上又点击建塔
-    checkClick() {
-
     }
 }

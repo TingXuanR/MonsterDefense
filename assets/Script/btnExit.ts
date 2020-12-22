@@ -1,9 +1,4 @@
 // Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
 
@@ -17,6 +12,10 @@ export default class btnReturn extends cc.Component {
         if(cc.director.isPaused()) {
             cc.director.resume();
         }
-        cc.director.loadScene('Menu');
+        let ani = this.node.parent.getComponent(cc.Animation);
+            ani.on('finished', ()=>{
+                cc.director.loadScene('Menu');
+            });
+            ani.play('FadeOut');
     }
 }

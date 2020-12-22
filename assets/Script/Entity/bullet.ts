@@ -6,12 +6,10 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class Bullet extends cc.Component {
     private _ack:number=0;
-    private _scope:number=0;
     private _speed:number=0;
     private _target;
     createWithData(bulletDt) {
         this._ack = bulletDt['ack'];
-        this._scope = bulletDt['scope'];
         this._speed = bulletDt['speed'];
     }
     getAck() {

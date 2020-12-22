@@ -1,9 +1,3 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import ModuleBase from "../Module/ModuleBase";
 import TileMapCtrl from "../TileMapCtrl";
@@ -28,5 +22,24 @@ export default class NewClass extends ModuleBase {
         }
         return null;
         //return false;
+    }
+    changeOpacity(cards){
+        let tileMapCtrl = <TileMapCtrl>this.getModule('TileMap');
+        for(let card of cards) {
+            for (const tower of this._towers) {
+                let towerTile = tileMapCtrl.getTileByPos(tower.getPosition());
+                if(towerTile.x===card.x && towerTile.y===card.y) {  
+                   tower.opacity = 100;
+                }
+            }
+        }
+    }
+
+    restoreOpacity() {
+        for (const tower of this._towers) {
+            if(tower.opacity !== 255) {  
+               tower.opacity = 255;
+            }
+        }
     }
 }

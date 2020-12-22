@@ -1,5 +1,4 @@
 
-
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -20,7 +19,12 @@ class btnStart extends cc.Component {
     }
 
     onBtnStart() {
-        cc.director.loadScene('Game');
+        let ani = this.node.getComponent(cc.Animation);
+            ani.on('finished', ()=>{
+                cc.director.loadScene('Game');
+            });
+            ani.play('FadeOut');
+        //cc.director.loadScene('Game');
     }
     // update (dt) {}
 }

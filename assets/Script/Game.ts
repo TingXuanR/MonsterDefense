@@ -1,5 +1,4 @@
 import ModuleMgr from "./Module/ModuleMgr";
-import LevelMgr from "./Manager/LevelMgr";
 
 const {ccclass, property} = cc._decorator;
 

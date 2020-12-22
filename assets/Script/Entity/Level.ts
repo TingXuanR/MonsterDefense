@@ -23,16 +23,17 @@ export default class Level extends ModuleBase {
         this.node.getChildByName('tipMsg').active = false;
         this.levelMgr = LevelMgr.getInstance();
         this.levelMgr.init();
+
     }
     start() {
         this.setImg();
     }
     setImg() { 
         let levelImg = ResMgr.getInstance().getSpriteFrame('levelUnLocked');
-        let curIndex = this.levelMgr.getUnLockedID();   // 当前已解锁的关卡下标
-        for(let i = curIndex;i <= this.pageView.getPages().length; ++i) {
-            if(!this.levelMgr.getIsLocked(4000+curIndex)) {
-                let levelPage = cc.find('Canvas/Menu/PageView/view/content/page_'+curIndex);
+        let curIndex = this.levelMgr.getUnLockedID();   // 当前已解锁的最后一个关卡的下标
+        for(let i = 1;i <= curIndex; ++i) {
+            if(!this.levelMgr.getIsLocked(4000+i)) {
+                let levelPage = cc.find('Canvas/Menu/PageView/view/content/page_'+i);
                 levelPage.getComponent(cc.Sprite).spriteFrame = levelImg;
             }
         }

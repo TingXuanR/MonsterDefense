@@ -84,7 +84,8 @@ export default class Enemy extends ModuleBase {
         if (this._curHp <= 0) {
             this._isDie = true;
             this.sendMsg('topBar', 'updateMoney', this._money);
-
+            this.node.stopAllActions();
+            //cc.director.getActionManager().pauseTarget(this.node);
             let ani = this.node.getChildByName('enemy' + (this._id - 1000)).getComponent(cc.Animation);
             let animate = ani.play('Died_Monster' + (this._id - 1000));
             let duration = animate.duration;
