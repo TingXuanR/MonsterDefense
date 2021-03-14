@@ -12,3 +12,5 @@
 ### 1. 菜单图片变化完成。将LevelMgr写成单词
 ### 2. 在敌人Hp将为0时采用了node.stopAllAction()来停止敌人的moveTo动作
 ### 3. ~~使用setSlibings来设置同级node之间的关系~~直接移动节点挂载的父节点就可以
+
+2021/03/15
